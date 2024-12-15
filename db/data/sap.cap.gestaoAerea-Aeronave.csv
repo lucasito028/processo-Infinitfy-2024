@@ -1,0 +1,6 @@
+marca;modelo;numeroSerie;capacidade;tipoMotor
+Boeing;737-800;SN12345;189;Turbofan
+Airbus;A320;SN67890;180;Turbofan
+Embraer;E190;SN11223;106;Turbofan
+Cessna;172;SN44556;4;Piston
+Gulfstream;G650;SN78901;18;Turbofan

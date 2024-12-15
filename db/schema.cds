@@ -1,11 +1,11 @@
-namespace gestao.aerea;
+namespace sap.cap.gestaoAerea;
 
 entity Companhia @readonly {
     key ICAO : String(4);
-    razaoSocial : String(255);
-    CNPJ : String(14);
-    telefone : String(15);
-    email : String(255);
+    key razaoSocial : String(255);
+    key CNPJ : String(14);
+    key telefone : String(15);
+    key email : String(255);
 }
 
 entity Aeronave @readonly {
@@ -43,15 +43,6 @@ entity Passageiro {
     dataNascimento : Date;
 }
 
-entity ReservaPassagem {
-    key reservaId : UUID;
-    passageiroId : Association to Passageiro;
-    horarioVooId : Association to HorarioVoo;
-    assento : String(5);
-    classe : String(20);
-    preco : Decimal(10,2);
-}
-
 entity HorarioVoo {
     key horarioId : UUID;
     companhiaId : Association to Companhia;
@@ -62,4 +53,13 @@ entity HorarioVoo {
     horarioChegada : DateTime;
     horarioPartidaReal : DateTime;
     horarioChegadaReal : DateTime;
+}
+
+entity ReservaPassagem {
+    key reservaId : UUID;
+    passageiroId : Association to Passageiro;
+    horarioVooId : Association to HorarioVoo;
+    assento : String(5);
+    classe : String(20);
+    preco : Decimal(10,2);
 }
